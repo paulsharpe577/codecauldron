@@ -1,0 +1,55 @@
+<!-- projects/templates/projects/project_index.html -->
+
+{% extends "base.html" %}
+
+{% block page_content %}
+<h1>Projects</h1>
+<div class="row align-items-center">
+{% for project in projects %}
+    <div class="col-md-4">
+        <div class="card text-white bg-dark border-light text-center mb-2;" style="margin-bottom: 20px;">
+           
+            {% if project.image %}
+            <center> <!-- Center the image and content -->
+                <br> <!-- Line break goes here -->
+                <img class="card-img-top img-fluid" src="{{ project.image.url }}" style="padding: 5px; padding-top: 0px">
+                </center>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a href="{% url 'project_detail' project.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+            
+        </div>
+    
+</div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+<div class="row">
+    <div class="col-sm-6">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+  </div>
