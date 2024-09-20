@@ -1,0 +1,16 @@
+
+{% extends "base.html" %}
+
+<!-- Active sign up form-->
+
+
+{% block page_content %}
+<!-- templates/registration/login.html -->
+<h2>Log In</h2>
+<form method="post">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Log In</button>
+</form>
+
+{% endblock page_content %}

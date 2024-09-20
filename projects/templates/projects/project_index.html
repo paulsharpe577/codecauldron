@@ -3,7 +3,7 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-<h1>Projects</h1>
+<h1 id="projecttitle">Projects</h1>
 <div class="row align-items-center">
 {% for project in projects %}
     <div class="col-md-4">
@@ -33,23 +33,3 @@
 {% endblock %}
 
 
-<div class="row">
-    <div class="col-sm-6">
-      <div class="card text-center">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
