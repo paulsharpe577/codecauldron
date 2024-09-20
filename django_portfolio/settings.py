@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "accounts",  # new
 
 
-    # Machina dependencies:
+    # Machina dependencies: 
     'mptt',
     'haystack',
     'widget_tweaks',
