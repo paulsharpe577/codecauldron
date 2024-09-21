@@ -169,6 +169,7 @@ from machina import MACHINA_MAIN_STATIC_DIR
 STATICFILES_DIRS = (
     # ...
     MACHINA_MAIN_STATIC_DIR,
+    BASE_DIR / "static"  # new
 )
 
 CACHES = {
@@ -193,3 +194,5 @@ LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend" # new
+
+AUTH_USER_MODEL = "accounts.CustomUser"  # new

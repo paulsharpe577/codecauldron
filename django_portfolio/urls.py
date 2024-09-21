@@ -24,7 +24,7 @@ from machina import urls as machina_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-     path("accounts/", include("accounts.urls")),  # new
+    path("accounts/", include("accounts.urls")),  # new
     path("", include("pages.urls")),
     path("projects/", include("projects.urls")),
     path('forum/', include(machina_urls)),
