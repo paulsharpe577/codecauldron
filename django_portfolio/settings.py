@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "pages.apps.PagesConfig", # New app
     "projects.apps.ProjectsConfig", #Second new app
     'register.apps.RegisterConfig', # Register app
+    "blog.apps.BlogConfig", #NEW
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

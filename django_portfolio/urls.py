@@ -27,9 +27,11 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),  # new
     path("", include("pages.urls")),
     path("projects/", include("projects.urls")),
+    path("walkthroughs/", include("blog.urls")), #NEW
     path('forum/', include(machina_urls)),
     path("register/", v.register, name="register"),  # <-- added
     path("accounts/", include("django.contrib.auth.urls")),  # new
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
