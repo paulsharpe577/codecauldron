@@ -154,7 +154,18 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+
+import os
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "staticfiles"), 
+]
+
+
+
+#STATIC_URL = 'static/'
+
+#STATIC_ROOT = os.path.join(BASE_DIR, 'projects/static') #test new
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -167,11 +178,12 @@ MEDIA_URL = "media/"
 
 from machina import MACHINA_MAIN_STATIC_DIR
 
-STATICFILES_DIRS = (
+#STATICFILES_DIRS = (
     # ...
-    MACHINA_MAIN_STATIC_DIR,
-    BASE_DIR / "static"  # new
-)
+#    MACHINA_MAIN_STATIC_DIR,
+#    os.path.join(BASE_DIR, 'projects/') #test new
+    #BASE_DIR / "static"  # new
+#)
 
 CACHES = {
     'default': {
