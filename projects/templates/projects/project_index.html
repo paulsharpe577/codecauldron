@@ -3,6 +3,9 @@
 {% extends "base.html" %}
 
 {% block page_content %}
+
+{% block projects %}
+
 <h1 id="projecttitle">Projects</h1>
 <div class="row align-items-center">
 {% for project in projects %}
@@ -22,14 +25,30 @@
                    class="btn btn-primary">
                     Read More
                 </a>
+
+                {{ project.created_on.date }} | Categories:
+                {% for category in project.categories.all %}
+                    <a href="{% url 'project_category' category.name %}">
+                        {{ category.name }}
+                        {% endfor %}
+             
+
+
+
             </div>
             
         </div>
     
 </div>
     {% endfor %}
+
+
+
+
 </div>
 
-{% endblock %}
+{% endblock projects %}
+
+{% endblock page_content %}
 
 

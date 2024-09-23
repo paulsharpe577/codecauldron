@@ -5,7 +5,11 @@
 {% block title %}Home{% endblock %}
 
 {% block page_content %}
-    <h1>Hello, World!</h1>
+
+
+
+
+
 
 
 
@@ -22,7 +26,34 @@
     <a href="{% url 'login' %}">Log In</a>
     {% endif %}
 
+    {% block posts %}
 
+
+
+
+    {% for post in posts %}
+    <div class="card-deck">
+        <div class="card">
+            {% load static %}
+          
+          
+          <div class="card-body">
+            <img class="blogindexicon" class="card-img-top" src="{% static 'images/cauldron.png' %}" alt="Card image cap">
+            <h5 class="card-title"><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h5>
+            <p class="card-text"><p>{{ post.body | slice:":400" }}...</p>
+            <p class="card-text"><small class="text-muted">
+                {{ post.created_on.date }} | Categories:
+                {% for category in post.categories.all %}
+                    <a href="{% url 'blog_category' category.name %}">
+                        {{ category.name }}
+                {% endfor %}
+                    </a></small></p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+{% endblock posts %}
 
 {% endblock page_content %}
 

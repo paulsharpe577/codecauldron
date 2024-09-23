@@ -6,9 +6,20 @@ from projects.models import Project
 def project_index(request):
     projects = Project.objects.all()
     context = {
-        "projects": projects
+        "projects": projects,
     }
     return render(request, "projects/project_index.html", context)
+
+
+def project_category(request, category):
+    projects = Project.objects.filter(
+        categories__name__contains=category
+    ).order_by("-created_on")
+    context = {
+        "category": category,
+        "projects": projects,
+    }
+    return render(request, "projects/category.html", context)
 
 def project_detail(request, pk):
     project = Project.objects.get(pk=pk)
@@ -16,3 +27,4 @@ def project_detail(request, pk):
         "project": project
     }
     return render(request, "projects/project_detail.html", context)
+

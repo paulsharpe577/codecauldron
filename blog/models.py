@@ -17,6 +17,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     last_modified = models.DateTimeField(auto_now=True)
     categories = models.ManyToManyField("Category", related_name="posts")
+    featured = models.BooleanField(default=False, help_text='Featured post on home page')
 
 
     def __str__(self):
