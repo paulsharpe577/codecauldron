@@ -20,7 +20,7 @@
             {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description }}</p>
+                <p class="card-text">{{ project.description | slice:":200"}}....</p>
                 <a href="{% url 'project_detail' project.pk %}"
                    class="btn btn-primary">
                     Read More
@@ -28,7 +28,7 @@
 
                 {{ project.created_on.date }} | Categories:
                 {% for category in project.categories.all %}
-                    <a href="{% url 'project_category' category.name %}">
+                    <a href="{% url 'project_category' category.name %}"> </a>
                         {{ category.name }}
                         {% endfor %}
              

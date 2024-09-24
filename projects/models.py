@@ -21,6 +21,9 @@ class Project(models.Model):
     categories = models.ManyToManyField("Category", related_name="projects")
     created_on = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.title
+
 
 
 
