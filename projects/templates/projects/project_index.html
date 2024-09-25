@@ -28,8 +28,8 @@
 
                 {{ project.created_on.date }} | Categories:
                 {% for category in project.categories.all %}
-                    <a href="{% url 'project_category' category.name %}"> </a>
-                        {{ category.name }}
+                    <a href="{% url 'project_category' category.name%}"> 
+                        {{ category.name }}</a>
                         {% endfor %}
              
 
