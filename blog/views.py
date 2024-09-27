@@ -22,7 +22,7 @@ def blog_category(request, category):
     }
     return render(request, "blog/category.html", context)
 
-@login_required
+#@login_required
 def blog_detail(request, pk):
     post = Post.objects.get(pk=pk)
 

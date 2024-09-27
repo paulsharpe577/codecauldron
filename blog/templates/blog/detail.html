@@ -46,6 +46,7 @@
 
 </main>
 <div>
+{% if user.is_authenticated %}
 <h3 id="leavecoment">Leave a comment:</h3>
 <form method="post"class="detailform">
     {% csrf_token %}
@@ -57,6 +58,7 @@
     </div>
     
     <button type="submit" class="btn btn-primary" id="my-button">Submit</button> 
+    {% endif %}
 </form>
 
 <h3>Comments:</h3>
