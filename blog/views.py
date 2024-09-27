@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from blog.models import Post, Comment
 from blog.forms import CommentForm
+from django.contrib.auth.decorators import login_required
 
 def blog_index(request):
     posts = Post.objects.all().order_by("-created_on")
@@ -21,6 +22,7 @@ def blog_category(request, category):
     }
     return render(request, "blog/category.html", context)
 
+@login_required
 def blog_detail(request, pk):
     post = Post.objects.get(pk=pk)
 

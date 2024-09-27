@@ -128,7 +128,7 @@ div {
 }
 
 .page-title {
-	color: hsl(320, 60%, 30%);
+	color: #7c4dff;
 	font-size: calc(3rem + .25vw);
 	font-weight: 700;
 	line-height: 1.3;
@@ -145,7 +145,7 @@ div {
 	
 	@supports (initial-letter: 2) or (-webkit-initial-letter: 2) {
 		&:first-letter {
-			color: hsl(320, 60%, 30%);
+			color: #7c4dff;
 			font-weight: 700;
 			initial-letter: 2;
 			-webkit-initial-letter: 2;
