@@ -37,7 +37,7 @@ def blog_detail(request, pk):
             )
             comment.save()
             return HttpResponseRedirect(request.path_info)
-    comments = Comment.objects.filter(post=post)
+    comments = Comment.objects.filter(post=post).order_by("-created_on")
     context = {
         "post": post,
         "comments": comments,

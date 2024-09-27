@@ -3,23 +3,84 @@
 {% extends "base.html" %}
 
 {% block page_content %}
-<h1>{{ project.title }}</h1>
-<div class="row">
-    <div class="col-md-8">
+
+
+<main>
+	<div class="intro">
+		<h1 class="post-title">{% block page_title %}
+            {{ project.title }}
+        {% endblock page_title %}</h1>
+    </div>
+
+	<div class="byline">
+		<p class="meta">
+        <small>
+            {{ project.created_on.date }} | Categories:
+            {% for category in project.categories.all %}
+                <a href="{% url 'project_category' category.name %}">
+                    {{ category.name }}
+                </a>
+            {% endfor %}
+        </small></p>
+	</div>
+
+
+	<div class="summary">
+		<h3>TL;DR Summary</h3>
+		<p>{{ project.title }}</p>
+	</div>
+
+
+    <div class="col-md-12">
         {% if project.image %}
-            <img src="{{ project.image.url }}" width="100%">
+            <img src="{{ project.image.url }}" width="400rem">
         {% endif %}
     </div>
-    <div class="col-md-4">
-        <h5>About the project:</h5>
-        <p>{{ project.description }}</p>
-        <br>
+
+
+	
+	<div class="post-content">
+		<p>{{ project.description | linebreaks }}</p>
         <h5>Technology used:</h5>
         <p>{{ project.technology }}</p>
+	</div>
+
+
+
+
+
+
+
+
+
+<div>
+<h3 id="leavecoment">Leave a comment:</h3>
+<form method="post"class="detailform">
+    {% csrf_token %}
+    <div>
+        {{ form.author }}
     </div>
+    <div>
+        {{ form.body }}
+    </div>
+    
+    <button type="submit" class="btn btn-primary" id="my-button">Submit</button> 
+</form>
+
+<h3>Comments:</h3>
+{% for comment in comments %}
+    <p>
+        On {{ comment.created_on.date }} <b>{{ comment.author }}</b> wrote:
+    </p>
+    <p>
+        {{ comment.body | linebreaks }}
+    </p>
+{% endfor %}
+
+
 </div>
 
-
+</main>
 
 {% endblock page_content %}
 
