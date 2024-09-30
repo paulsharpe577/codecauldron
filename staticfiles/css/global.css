@@ -13,7 +13,10 @@ padding-left: 20px;
 	height: auto;
 }
 
-
+.card-deck{
+	padding-bottom: 2px;
+	
+}
 
 
 /* Just for Blog detail  */

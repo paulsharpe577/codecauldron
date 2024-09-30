@@ -6,44 +6,53 @@
 
 {% block page_content %}
 
-
-
+<!-- Sign-up section under navigation bar -->
+<div style="text-align: center; padding: 20px; background-color: #f4f4f4; border-top: 2px solid #ccc;">
+  <h2>Interested in Learning to Code and you live around Portishead?</h2>
+  <p>Sign up now and start your coding journey!</p>
+  
+  <form action="#" method="post" style="display: inline-block;">
+      <input type="email" name="email" placeholder="Enter your email" required
+             style="padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 5px; margin-right: 10px;">
+      <button type="submit" style="padding: 10px 20px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+          Sign Up
+      </button>
+  </form>
+</div>
 
 <div class="jumbotron p-3 p-md-6 text-white rounded bg-dark">
-  <div class="col-md-6 px-0">
-    <h1 class="display-4 font-italic">Welcome to Code Cauldron Portishead!</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <h1 class="display-4 font-italic">Welcome to Code Cauldron Portishead!</h1>
     <p class="lead my-3">At Code Cauldron, we believe that coding is an exciting and rewarding skill anyone can learn, no matter your background or experience. Our club is designed for adults who are just starting out or looking to grow their coding skills, whether you’re a complete beginner or have some experience and want to level up.
 
       We offer a relaxed, supportive environment where you can work on real-world projects, learn new coding languages, and explore different areas of tech. From building websites to automating tasks and coding simple games, we focus on practical, hands-on learning that you can apply right away.
       
-      Join us, and take the next step on your coding journey with a community of like-minded learners!</p> 
-      
+      Join us, and take the next step on your coding journey with a community of like-minded learners!</p>
+    </div>
+    <div class="col-sm">
+      {% load static %}
+      <img src="{% static 'images/home.jpeg' %}" width="400rem">
+     
+    </div>
 
-
-    <p class="lead mb-0"><a href="#" class="text-white font-weight-bold"></a></p>
-
+    </div>
   </div>
-
-
-
-  
 </div>
-
+</div>
 
     {% block posts %}
 
-    <div class="jumbotron jumbotron-fluid jumbotron bg-dark text-white">
-      <div class="container">
+<div class="jumbotron jumbotron-fluid jumbotron rounded bg-dark text-white" id="featuredposts">
+  <div class="container">
         <h1 class="display-4">Featured posts</h1>
         <p class="lead">A curation of our latest content</p>
-
-
 
     {% for post in posts %}
     <div class="card-deck">
         <div class="card">
             {% load static %}
-          
           
           <div class="card-body">
             <img class="blogindexicon" class="card-img-top" src="{% static 'images/cauldron.png' %}" alt="Card image cap">
@@ -58,11 +67,11 @@
                     </a></small></p>
           </div>
         </div>
-      </div>
-      {% endfor %}
-
     </div>
+    {% endfor %}
+
   </div>
+</div>
 
 {% endblock posts %}
 
