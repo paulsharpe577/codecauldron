@@ -6,4 +6,5 @@ from pages import views
 urlpatterns = [
     path("", views.home, name='home'),
     path("calendar/", views.calendar, name='calendar'),
+    path("about/", views.about, name='about'),
 ]

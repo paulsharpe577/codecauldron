@@ -17,3 +17,5 @@ def home(request):
 def calendar(request):
     return render(request, "pages/calendar.html", {})
 
+def about(request):
+    return render(request, "pages/about.html", {})
